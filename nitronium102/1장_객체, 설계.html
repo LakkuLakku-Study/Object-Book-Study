@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>1&#xc7a5;&period; &#xac1d;&#xccb4;&comma; &#xc124;&#xacc4;</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+            
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-light">
+            <h1 id="1장-객체-설계">1장. 객체, 설계</h1>
+<!-- TOC -->
+<ul>
+<li><a href="#%EC%9E%A5-%EA%B0%9D%EC%B2%B4-%EC%84%A4%EA%B3%84">장. 객체, 설계</a></li>
+<li><a href="#-%ED%8B%B0%EC%BC%93-%ED%8C%90%EB%A7%A4-%EC%95%A0%ED%94%8C%EB%A6%AC%EC%BC%80%EC%9D%B4%EC%85%98-%EC%84%A4%EA%B3%84">🔷 티켓 판매 애플리케이션 설계</a>
+- <a href="#-%EC%9A%94%EA%B5%AC%EC%82%AC%ED%95%AD">🔻 요구사항</a></li>
+<li><a href="#-%EC%A0%88%EC%B0%A8-%EC%A7%80%ED%96%A5%EC%A0%81%EC%9D%B8-%EC%84%A4%EA%B3%84">🔷 절차 지향적인 설계</a>
+<ul>
+<li><a href="#-%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4-%EB%AA%A8%EB%93%88%EC%9D%B4-%EA%B0%80%EC%A0%B8%EC%95%BC-%ED%95%98%EB%8A%94-3%EA%B0%80%EC%A7%80-%EA%B8%B0%EB%8A%A5">🔸 소프트웨어 모듈이 가져야 하는 3가지 기능</a>
+<ul>
+<li><a href="#-%EC%9C%84-%EC%BD%94%EB%93%9C%EC%9D%98-%EB%AC%B8%EC%A0%9C">🔻 위 코드의 문제</a></li>
+<li><a href="#-%EB%AA%A9%ED%91%9C">🔻 목표</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#-%EC%84%A4%EA%B3%84-%EA%B0%9C%EC%84%A0%ED%95%98%EA%B8%B0">🔷 설계 개선하기</a>
+<ul>
+<li><a href="#-%EC%9E%90%EC%9C%A8%EC%84%B1%EC%9D%84-%EB%86%92%EC%9D%B4%EC%9E%90">🔸 자율성을 높이자</a>
+<ul>
+<li><a href="#-%EC%BA%A1%EC%8A%90%ED%99%94%EC%99%80-%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4">🔻 캡슐화와 인터페이스</a></li>
+<li><a href="#-%EA%B2%B0%EA%B3%BC">🔻 결과</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#-%EC%A0%88%EC%B0%A8%EC%A7%80%ED%96%A5-vs-%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5">🔷 절차지향 vs 객체지향</a>
+- <a href="#-%EC%A0%88%EC%B0%A8%EC%A7%80%ED%96%A5">🔻 절차지향</a>
+- <a href="#-%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5">🔻 객체지향</a>
+- <a href="#-%EC%9D%98%EB%AC%B8">❓ 의문</a>
+<ul>
+<li><a href="#-%EB%91%90-%EB%B0%A9%EC%8B%9D%EC%9D%98-%EC%B0%A8%EC%9D%B4">🔸 두 방식의 차이</a>
+<ul>
+<li><a href="#-%EC%B1%85%EC%9E%84%EC%9D%98-%EC%9D%B4%EB%8F%99-shift-of-responsibility">🔻 책임의 이동 shift of responsibility</a></li>
+<li><a href="#-%EC%9D%98%EC%9D%B8%ED%99%94">🔻 의인화</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#-%EA%B0%9D%EC%B2%B4-%EC%A7%80%ED%96%A5%EC%A0%81%EC%9D%B8-%EC%84%A4%EA%B3%84">🔷 객체 지향적인 설계</a>
+<ul>
+<li><a href="#-%EC%84%A4%EA%B3%84%EA%B0%80-%EC%99%9C-%ED%95%84%EC%9A%94%ED%95%9C%EA%B0%80">🔸 설계가 왜 필요한가</a></li>
+<li><a href="#-%EC%84%A4%EA%B3%84%EC%9D%98-tradeoff">🔸 설계의 tradeoff</a></li>
+</ul>
+</li>
+</ul>
+<!-- /TOC -->
+<h1 id="-티켓-판매-애플리케이션-설계">🔷 티켓 판매 애플리케이션 설계</h1>
+<h3 id="-요구사항">🔻 요구사항</h3>
+<ol>
+<li>Invitation, Ticket, Bag, Audience</li>
+</ol>
+<ul>
+<li>이벤트에 당첨된 관람객은 초대장을 티켓으로 교환한 후 입장한다</li>
+<li>이벤트에 당첨되지 않은 관람객은 티켓을 구매해야만 입장할 수 있다</li>
+</ul>
+<ol start="2">
+<li>TicketOffice, TicketSeller, Theater</li>
+</ol>
+<ul>
+<li>티켓을 관리하고 판매하는 역할 진행</li>
+</ul>
+<p> </p>
+<h1 id="-절차-지향적인-설계">🔷 절차 지향적인 설계</h1>
+<p><img src="file:///c:\dev\Object-Book-Study\nitronium102\image.png" alt="alt text"></p>
+<pre><code class="language-java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Theater</span> {
+    <span class="hljs-keyword">private</span> TicketSeller ticketSeller;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-title function_">Theater</span><span class="hljs-params">(TicketSeller ticketSeller)</span> {
+        <span class="hljs-built_in">this</span>.ticketSeller = ticketSeller;
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">enter</span><span class="hljs-params">(Audience audience)</span>{
+        <span class="hljs-keyword">if</span>(audience.getBag().hasInvitation()){
+            <span class="hljs-type">Ticket</span> <span class="hljs-variable">ticket</span> <span class="hljs-operator">=</span> ticketSeller.getTicketOffice().getTicket();
+            audience.getBag().setTicket(ticket);
+        }<span class="hljs-keyword">else</span>{
+            <span class="hljs-type">Ticket</span> <span class="hljs-variable">ticket</span> <span class="hljs-operator">=</span> ticketSeller.getTicketOffice().getTicket();
+            audience.getBag().minusAmount(ticket.getFee());
+            ticketSeller.getTicketOffice().plusAmount(ticket.getFee());
+            audience.getBag().setTicket(ticket);
+        }
+    }
+}
+</code></pre>
+<h2 id="-소프트웨어-모듈이-가져야-하는-3가지-기능">🔸 소프트웨어 모듈이 가져야 하는 3가지 기능</h2>
+<ul>
+<li>모듈은 정상적으로 실행되어야 한다</li>
+<li>변경이 용이해야 한다</li>
+<li>이해하기 쉬워야 한다</li>
+</ul>
+<h3 id="-위-코드의-문제">🔻 위 코드의 문제</h3>
+<ol>
+<li>예상을 빗나가는 코드</li>
+</ol>
+<ul>
+<li>소극장이 관람객의 가방에서 직접 돈을 가져간다 (관람객의 허락 x)</li>
+<li>소극장이 직접 매표소의 티켓과 현금에 접근한 후, 관람객에게 티켓을 전달한다</li>
+<li>따라서 티켓 판매원이 하는 일이 없다</li>
+</ul>
+<ol start="2">
+<li>변경에 취약한 코드</li>
+</ol>
+<ul>
+<li>Audience와 TicketSeller를 변경할 경우 Theater도 함께 변경해야 한다</li>
+<li>객체 사이의 <strong>의존성</strong>이 과하기 때문이다 (의존성: 어떤 객체가 변경될 때, 그 객체에게 의존하는 다른 객체도 함께 변경될 수 있다)</li>
+<li>이렇게 의존성이 과한 경우를 <strong>결합도coupling</strong>이 높다고 한다</li>
+</ul>
+<h3 id="-목표">🔻 목표</h3>
+<ul>
+<li>애플리케이션의 기능을 유지하는 데 필요한 최소한의 의존성만 유지하고 불필요한 의존성을 제거하는 것이다</li>
+</ul>
+<p> </p>
+<h1 id="-설계-개선하기">🔷 설계 개선하기</h1>
+<h2 id="-자율성을-높이자">🔸 자율성을 높이자</h2>
+<blockquote>
+<p>Audience와 TicketSeller를 자율적인 존재로 만들자</p>
+</blockquote>
+<ul>
+<li>설계를 변경하기 어려운 이유는 Theater가 아래에 접근하기 때문이다
+<ul>
+<li>Audience 및 TicketSeller에 접근</li>
+<li>Audience 소유의 Bag에 접근</li>
+<li>TicketSeller가 근무하는 TicketOffice까지 접근</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-java"><span class="hljs-comment">// Theater의 enter 메서드에서 TicketOffice에 접근하는 모든 코드를 TicketSeller에게로 옮기자</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Theater</span> {
+    <span class="hljs-keyword">private</span> TicketSeller ticketSeller;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-title function_">Theater</span><span class="hljs-params">(TicketSeller ticketSeller)</span> {
+        <span class="hljs-built_in">this</span>.ticketSeller = ticketSeller;
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">enter</span><span class="hljs-params">(Audience audience)</span>{
+        <span class="hljs-keyword">if</span>(audience.getBag().hasInvitation()){
+            <span class="hljs-type">Ticket</span> <span class="hljs-variable">ticket</span> <span class="hljs-operator">=</span> ticketSeller.getTicketOffice().getTicket();
+            audience.getBag().setTicket(ticket);
+        }<span class="hljs-keyword">else</span>{
+            <span class="hljs-type">Ticket</span> <span class="hljs-variable">ticket</span> <span class="hljs-operator">=</span> ticketSeller.getTicketOffice().getTicket();
+            audience.getBag().minusAmount(ticket.getFee());
+            ticketSeller.getTicketOffice().plusAmount(ticket.getFee());
+            audience.getBag().setTicket(ticket);
+        }
+    }
+}
+</code></pre>
+<pre><code class="language-java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Theater</span> {
+    <span class="hljs-keyword">private</span> TicketSeller ticketSeller;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-title function_">Theater</span><span class="hljs-params">(TicketSeller ticketSeller)</span> {
+        <span class="hljs-built_in">this</span>.ticketSeller = ticketSeller;
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">enter</span><span class="hljs-params">(Audience audience)</span>{
+        ticketSeller.sellTo(audience);
+    }
+}
+</code></pre>
+<h3 id="-캡슐화와-인터페이스">🔻 캡슐화와 인터페이스</h3>
+<ul>
+<li>TicketOffice에 대한 접근은 오직 TicketSeller에서만 가능하다</li>
+<li>캡슐화: 개념적이나 물리적으로 객체 내부의 세부적인 사항을 감추는 것</li>
+<li>객체를 인터페이스와 구현으로 나누고 인터페이스만을 공개하는 것은, 객체 사이의 결합도를 낮추고 변경하기 쉬운 코드를 작성하기 위한 기본 원칙이다
+<ul>
+<li>Theater는 오직 TicketSeller의 인터페이스에만 의존한다</li>
+<li>TicketSeller가 내부에 TickerOffice 인스턴스를 포함하고 있다는 사실은 구현의 영역에 속한다</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-java"><span class="hljs-comment">// TicketSeller의 getBag 메서드를 Audience 안으로 옮겨주자!</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Audience</span> {
+    <span class="hljs-keyword">private</span> Bag bag;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-title function_">Audience</span><span class="hljs-params">(Bag bag)</span> {
+        <span class="hljs-built_in">this</span>.bag = bag;
+    }
+
+    <span class="hljs-keyword">public</span> Long <span class="hljs-title function_">buy</span><span class="hljs-params">(Ticket ticket)</span>{
+        <span class="hljs-keyword">if</span>(bag.hasInvitation()){
+            bag.setTicket(ticket);
+            <span class="hljs-keyword">return</span> <span class="hljs-number">0L</span>;
+        }<span class="hljs-keyword">else</span>{
+            bag.setTicket(ticket);
+            bag.minusAmount(ticket.getFee());
+            <span class="hljs-keyword">return</span> ticket.getFee();
+        }
+    }
+}
+</code></pre>
+<h3 id="-결과">🔻 결과</h3>
+<p><img src="file:///c:\dev\Object-Book-Study\nitronium102\image-1.png" alt="alt text"></p>
+<p><strong>핵심은 객체 내부의 상태를 캡슐화하고, 객체 간에 오직 메시지를 통해서만 상호작용하도록 만드는 것이다</strong></p>
+<p> </p>
+<p><strong>객체의 응집도를 높이기 위해서는 객체 스스로 자신의 데이터를 책임지고, 외부의 간섭을 최대한 배제하고 메시지를 통해서만 협력해야 한다.</strong></p>
+<p> </p>
+<h1 id="-절차지향-vs-객체지향">🔷 절차지향 vs 객체지향</h1>
+<h3 id="-절차지향">🔻 절차지향</h3>
+<blockquote>
+<p>process와 data를 별도의 모듈에 위치시키는 방식</p>
+</blockquote>
+<ul>
+<li>Theater의 enter 메소드는 <code>Process</code></li>
+<li>Audience, Bag, TicketOffice는 <code>Data</code></li>
+</ul>
+<h3 id="-객체지향">🔻 객체지향</h3>
+<blockquote>
+<p>process와 data를 동일한 모듈 내부에 위치시키는 방식</p>
+</blockquote>
+<ul>
+<li>데이터를 사용하는 process가 데이터를 소유하고 있는 audience와 ticketseller 내부로 옮겨졌다</li>
+</ul>
+<h3 id="-의문">❓ 의문</h3>
+<p>이러면 mapper 클래스를 쓸 필요 없이 dto 안에서 toEntity나 toOtherDto 클래스를 만드는 게 더 나은 방법인가?</p>
+<h2 id="-두-방식의-차이">🔸 두 방식의 차이</h2>
+<h3 id="-책임의-이동-shift-of-responsibility">🔻 책임의 이동 shift of responsibility</h3>
+<blockquote>
+<p>책임 == 기능</p>
+</blockquote>
+<ul>
+<li>절차지향: 모든 책임이 하나의 객체(Theater)에 집중</li>
+<li>객체지향: 하나의 기능을 완성하는 데 필요한 책임이 여러 객체에 걸쳐 분산</li>
+</ul>
+<h3 id="-의인화">🔻 의인화</h3>
+<ul>
+<li>현실에서는 수동적인 존재이더라도 객체지향 세계에서는 모든 것이 능동적이고 자율적이다</li>
+<li>훌륭한 객체지향 설계란, 소프트웨어를 구성하는 모든 객체들이 자율적으로 행동하는 설계이다</li>
+</ul>
+<h1 id="-객체-지향적인-설계">🔷 객체 지향적인 설계</h1>
+<h2 id="-설계가-왜-필요한가">🔸 설계가 왜 필요한가</h2>
+<blockquote>
+<p>좋은 설계란, 오늘 요구하는 기능을 온전히 수행하면서 내일의 변경을 매끄럽게 수용할 수 있는 설계이다</p>
+</blockquote>
+<ul>
+<li>요구사항이 항상 변경된다</li>
+<li>코드를 변경할 때 버그가 추가될 가능성이 높다: 버그를 두려워하지 말자!</li>
+</ul>
+<h2 id="-설계의-tradeoff">🔸 설계의 tradeoff</h2>
+<blockquote>
+<p>어떤 경우에도 모든 사람들을 만족시킬 수 있는 설계를 만들 수는 없다</p>
+</blockquote>
+<ul>
+<li>어떤 기능을 설계하는 방법은 한 가지 이상일 수 있다</li>
+<li>동일한 기능을 한 가지 이상의 방법으로 설계할 수 있기 때문에, 결국 설계는 tradeoff의 산물이다</li>
+</ul>
+
+            
+            
+        </body>
+        </html>
